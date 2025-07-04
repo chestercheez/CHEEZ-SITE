@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-cheez-yellow text-black rounded-full font-semibold hover:bg-yellow-400 transition-all duration-200 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-cheez-yellow text-cheez-dark bg-white/90 backdrop-blur-sm rounded-full font-semibold hover:bg-cheez-yellow hover:text-black transition-all duration-200 shadow-lg;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4;
+  }
+  
+  .container-max {
+    @apply max-w-6xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Beautiful fade-in animations */
+  .animate-fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+  
+  .animate-fade-in-delay {
+    animation: fadeIn 1.2s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 1.2s ease-out 0.6s forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Hero background zoom effect */
+  .animate-hero-zoom {
+    animation: heroZoom 2s ease-out forwards;
+  }
+  
+  @keyframes heroZoom {
+    from {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+} 
